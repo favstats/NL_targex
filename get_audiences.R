@@ -13,7 +13,7 @@ source("utils.R")
 internal_page_ids <- read_csv("data/nl_advertisers.csv") %>%
     mutate(page_id = as.character(page_id))
 
-scraper <- function() {
+scraper <- function(.x) {
 
     print(paste0(.x$page_name,": ", round(which(internal_page_ids$page_id == .x$page_id)/nrow(internal_page_ids)*100, 2)))
 
