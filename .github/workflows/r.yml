@@ -18,12 +18,6 @@ jobs:
     steps:
       - name: Apt-get needed things
         run: |
-          sudo apt-get update -y && 
-          sudo apt-get upgrade -y &&
-          sudo apt-get dist-upgrade -y &&
-          sudo apt-get clean all && 
-          sudo apt-get install --no-install-recommends -y \
-          apt-utils && 
           sudo apt-get install --no-install-recommends -y \
           r-base-core \
           libssl-dev \
