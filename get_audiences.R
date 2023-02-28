@@ -28,7 +28,7 @@ scraper <- possibly(scraper, otherwise = NULL, quiet = F)
 
 
 ### save seperately
-internal_page_ids %>% #count(cntry, sort  =T) %>%
+yo <- internal_page_ids %>% #count(cntry, sort  =T) %>%
     # filter(!(page_id %in% already_there)) %>%
     # filter(cntry == "GB") %>%
     # slice(1:10) %>%
@@ -39,4 +39,4 @@ current_date <- paste0("provincies/", as.character(Sys.Date()))
 
 dir.create(current_date)
 
-saveRDS(yo, file = paste0("provincies/", current_date, ".rds"))
+yo <- saveRDS(yo, file = paste0("provincies/", current_date, ".rds"))
