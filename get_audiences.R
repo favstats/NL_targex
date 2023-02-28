@@ -4,6 +4,7 @@ source("utils.R")
 # debugonce(get_targeting)
 
 library(httr)
+install.packages("tidyverse")
 library(tidyverse)
 
 tstamp <- Sys.time()
