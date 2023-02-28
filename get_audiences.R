@@ -39,4 +39,4 @@ current_date <- paste0("provincies/", as.character(Sys.Date()))
 
 dir.create(current_date)
 
-yo <- saveRDS(yo, file = paste0("provincies/", current_date, ".rds"))
+saveRDS(yo, file = paste0(current_date, ".rds"))
