@@ -32,7 +32,6 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: "Install Packages"
         run: |
-          install.packages('tidyverse')
           install.packages('httr')
           install.packages('jsonlite')
           install.packages('janitor')
