@@ -44,3 +44,6 @@ current_date <- paste0("provincies/",  as.character(ds), "_30")
 #dir.create(current_date)
 
 saveRDS(yo, file = paste0(current_date, ".rds"))
+
+
+source("get_audiences7.R")
