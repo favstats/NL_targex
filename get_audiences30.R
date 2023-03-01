@@ -37,7 +37,7 @@ yo <- internal_page_ids %>% #count(cntry, sort  =T) %>%
     split(1:nrow(.)) %>%
     map_dfr(scraper)
 
-current_date <- paste0("provincies/", as.character(Sys.Date()))
+current_date <- paste0("provincies/",  as.character(Sys.Date()), "_30")
 
 #dir.create(current_date)
 
