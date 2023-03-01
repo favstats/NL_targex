@@ -23,6 +23,7 @@ scraper <- function(.x) {
 
     print(nrow(yo))
 
+    return(yo)
 }
 
 scraper <- possibly(scraper, otherwise = NULL, quiet = F)
@@ -38,6 +39,6 @@ yo <- internal_page_ids %>% #count(cntry, sort  =T) %>%
 
 current_date <- paste0("provincies/", as.character(Sys.Date()))
 
-dir.create(current_date)
+#dir.create(current_date)
 
 saveRDS(yo, file = paste0(current_date, ".rds"))
