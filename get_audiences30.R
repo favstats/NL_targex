@@ -37,7 +37,7 @@ yo <- internal_page_ids %>% #count(cntry, sort  =T) %>%
     split(1:nrow(.)) %>%
     map_dfr(scraper)
 
-ds <- yo %>% pull(ds) %>% unique %>% .[1]
+ds <- yo$ds[1]
 
 current_date <- paste0("provincies/",  as.character(ds), "_30")
 
@@ -46,4 +46,4 @@ current_date <- paste0("provincies/",  as.character(ds), "_30")
 saveRDS(yo, file = paste0(current_date, ".rds"))
 
 
-source("get_audiences7.R")
+#source("get_audiences7.R")
