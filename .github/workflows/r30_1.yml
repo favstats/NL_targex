@@ -37,7 +37,7 @@ jobs:
           install.packages('janitor')
         shell: Rscript {0}
       - name: "Script - Run"
-        run: Rscript 'get_audiences30.R'
+        run: Rscript 'get_audiences30_1.R'
       - name: "Commit"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
