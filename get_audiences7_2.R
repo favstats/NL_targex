@@ -1,6 +1,6 @@
 source("utils.R")
 # ?get_targeting
-# get_targeting("4145976729", timeframe = "LAST_90_DAYS")
+# get_targeting("41459763029", timeframe = "LAST_90_DAYS")
 # debugonce(get_targeting)
 
 library(httr)
@@ -80,15 +80,15 @@ all_dat <- internal_page_ids %>%
 
 
 scraper <- function(.x) {
-  
-  print(paste0(.x$page_name,": ", round(which(internal_page_ids$page_id == .x$page_id)/nrow(internal_page_ids)*100, 2)))
-  
-  yo <- get_targeting(.x$page_id, timeframe = "LAST_7_DAYS") %>%
-    mutate(tstamp = tstamp)
-  
-  print(nrow(yo))
-  
-  return(yo)
+
+    print(paste0(.x$page_name,": ", round(which(internal_page_ids$page_id == .x$page_id)/nrow(internal_page_ids)*100, 2)))
+
+    yo <- get_targeting(.x$page_id, timeframe = "LAST_7_DAYS") %>%
+        mutate(tstamp = tstamp)
+
+    print(nrow(yo))
+
+    return(yo)
 }
 
 scraper <- possibly(scraper, otherwise = NULL, quiet = F)
@@ -96,9 +96,9 @@ scraper <- possibly(scraper, otherwise = NULL, quiet = F)
 
 ### save seperately
 enddat <- internal_page_ids %>% 
-  arrange(desc(page_id)) %>%
-  split(1:nrow(.)) %>%
-  map_dfr(scraper)
+    arrange(desc(page_id)) %>%
+    split(1:nrow(.)) %>%
+    map_dfr(scraper)
 
 ds <- enddat$ds[1]
 
