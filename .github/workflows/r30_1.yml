@@ -2,7 +2,7 @@ name: "30 Timeframe"
 on:
   schedule:
     # Runs "at minute 55 past every hour" (see https://crontab.guru)
-    - cron: '0 12 * * *'
+    - cron: '0 0,12 * * *'
   push:
     branches:
       - main
